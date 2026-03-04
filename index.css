@@ -1,0 +1,711 @@
+/*CSS Reset*/
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+/* --- Headings (Inter) --- */
+    h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+/* Ensures they stay visible on dark background */
+    }
+
+/* --- Paragraphs (Roboto) --- */
+    p, span, label, input, textarea {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+/* Adds breathing room between lines */
+    color: #a0a0a0;
+/* A softer white/grey for better readability */
+    }
+
+/* Specific fix for your Lead text (the big intro paragraph) */
+    .lead {
+    font-weight: 300;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+    }
+
+
+
+/*===Navbar===*/
+
+/* 1. Force absolute top-level positioning */
+    .navbar.fixed-top {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+/* Forces full viewport width */
+    z-index: 9999 !important;
+/* Stay above EVERYTHING */
+    
+/* 2. Hardware acceleration fix for Mobile Safari/Chrome */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    }
+
+/* 3. Ensure no parent container is "trapping" the fixed element */
+    body, html {
+    overflow-x: hidden;
+/* Prevents horizontal shake on mobile */
+    position: relative;
+    }
+
+
+/* This forces the hamburger icon to be black and visible */
+    .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+
+/* Optional: Add a subtle border to the button so it's easier to see */
+    .navbar-toggler {
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    }
+
+/* Container adjustments */
+    .custom-navbar-container {
+    background-color: #F7FCF5;
+    border-radius: 50px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #BFBCBC;
+    width: auto;
+    transition: all 0.3s ease;
+    }
+
+/* Mobile Adjustments (Landscape and Phones) */
+    @media (max-width: 991.98px) {
+    .custom-navbar-container {
+    width: 95%;
+    border-radius: 20px;
+/* Less round when open */
+    display: block !important;
+/* Allow vertical stacking */
+    }
+    }
+
+/* Desktop Only: Divider Line */
+    @media (min-width: 992px) {
+    .custom-navbar-container {
+    display: flex;
+    align-items: center;
+    }
+    .brand-section {
+    border-right: 1px solid rgba(0,0,0,0.1);
+    padding-right: 1.5rem;
+    }
+    }
+
+/* Profile Circle */
+    .profile-circle {
+    width: 35px;
+    height: 35px;
+    background-color: #2F2E23;
+    border-radius: 50%;
+    flex-shrink: 0;
+    }
+
+/* Link Styling */
+    .nav-link {
+    color: #656363 !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 10px 0 !important;
+    }
+
+    .nav-link:hover, .nav-link.active {
+    color: #000000 !important;
+    }
+
+/* Remove default Bootstrap focus glow from the toggler */
+    .navbar-toggler:focus {
+    box-shadow: none;
+    }
+
+    .profile-circle {
+    width: 45px;
+/* Adjust size as needed */
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #eee;
+/* Placeholder color */
+    }
+
+    .profile-img {
+    background-image: url('./images/rojan.png'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #fff;
+/* Optional: adds a white border */
+    }
+
+/* === End of Navbar === */
+
+
+
+/* === Landing Page Section === */
+
+/* Typography & Effects */
+    .outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1px #41AB5D;
+    }
+
+    @media (max-width: 768px) {
+    .outline-text {
+    color: transparent !important; 
+    -webkit-text-stroke: 1px #41AB5D !important; 
+    }
+    }
+
+/* Trending Advanced Button - Fully Responsive */
+    .btn-trending {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+/* Desktop Defaults */
+    padding: 18px 45px;
+    font-size: 0.9rem;
+    
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00441B; 
+    text-decoration: none;
+    border: 2px solid #00441B; /* Made border slightly thicker for better visibility */
+    background: transparent;
+    overflow: hidden;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    white-space: nowrap;
+/* Prevents text from wrapping on tiny screens */
+    }
+
+    .btn-text {
+    position: relative;
+    z-index: 2;
+    }
+
+    .btn-fill {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00441B;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    }
+
+/* Hover State - Fixed Color */
+    .btn-trending:hover {
+    color: #FFFFFF;
+/* Text turns white so it's visible against the dark green fill */
+    box-shadow: 0 0 20px rgba(0, 68, 27, 0.6);
+    }
+
+    .btn-trending:hover .btn-fill {
+    transform: translateY(-100%);
+    }
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet (iPad/Small Laptops) */
+    @media (max-width: 991px) {
+    .btn-trending {
+        padding: 16px 40px;
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+    }
+    }
+
+/* Mobile (Phones) */
+    @media (max-width: 767px) {
+    .btn-trending {
+        padding: 14px 30px;
+        font-size: 0.8rem;
+        width: 100%; /* Makes button full-width on mobile for easier tapping */
+        max-width: 300px; /* Limits width so it doesn't look too stretched */
+        margin: 0 auto; /* Centers it if the parent is text-center */
+    }
+    }
+
+/* Extra Small (Tiny Phones) */
+    @media (max-width: 375px) {
+    .btn-trending {
+        padding: 12px 20px;
+        letter-spacing: 1px;
+    }
+    }
+
+/*End of Button*/
+
+
+/* Adjust outline thickness for mobile */
+    @media (max-width: 768px) {
+    .outline-text { -webkit-text-stroke: 0.8px #DDDDDD; }
+    }
+
+    .explore-wrapper {
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    }
+
+/* --- Image Stacking (Responsive) --- */
+    .visual-stack {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+/* Reduced for mobile */
+    }
+
+    @media (min-width: 992px) {
+    .visual-stack { min-height: 500px; }
+    }
+
+/* Background pixels */
+    .design-layer {
+    position: absolute;
+    z-index: 1;
+    width: 70%;
+    opacity: 0.6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+/* Centered on mobile */
+    }
+
+    @media (min-width: 992px) {
+    .design-layer {
+    top: 10%;
+    right: 0;
+    left: auto;
+    transform: none;
+    width: 80%;
+    }
+    }
+
+/* Force the body down to clear the navbar */
+    body {
+    padding-top: 60px !important;
+/* Adjust if your navbar is taller */
+    }
+
+/* On mobile, navbars often get taller, so add more space */
+    @media (max-width: 991px) {
+    body {
+    padding-top: 100px !important;
+    }
+    }
+
+/* --- ADD FIRE EFFECT HERE --- */
+
+/* Container for the Fire Effect */
+    .fire-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    }
+
+/* Fire Particles */
+    .fire-particle {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 120px;
+    /* Updated to use #00441B (0, 68, 27) with 80% opacity at the base */
+    background: linear-gradient(to top, rgba(0, 68, 27, 0.8) 0%, rgba(0, 68, 27, 0) 70%);
+    filter: blur(15px);
+    border-radius: 40% 40% 0 0;
+    opacity: 0;
+    z-index: 1; 
+    animation: rise 2s infinite ease-in;
+    }
+
+/* Position particles randomly */
+    .fire-particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .fire-particle:nth-child(2) { left: 30%; animation-delay: 0.5s; width: 150px; }
+    .fire-particle:nth-child(3) { left: 50%; animation-delay: 1.2s; }
+    .fire-particle:nth-child(4) { left: 70%; animation-delay: 0.8s; width: 120px; }
+    .fire-particle:nth-child(5) { left: 85%; animation-delay: 1.5s; }
+
+/* The "Rising" Animation */
+    @keyframes rise {
+    0% { transform: translateY(0) scaleX(1) scaleY(1); opacity: 0; }
+    30% { opacity: 0.8; }
+    100% { transform: translateY(-300px) scaleX(0.5) scaleY(2); opacity: 0; }
+    }
+
+/* Ensure the image stays on top of the fire */
+    .portrait-layer img {
+    position: relative;
+    z-index: 2;
+    }
+
+    /* --- END FIRE EFFECT --- */
+
+/* Portrait */
+.portrait-layer {
+    position: relative;
+    z-index: 2;
+    width: 120%; 
+    transition: transform 0.3s ease;
+}
+
+
+/* Portrait */
+    .portrait-layer {
+    position: relative;
+    z-index: 2;
+    width: 120%; /* Increased from 80% to 120% */
+    transition: transform 0.3s ease;
+    }
+
+
+/* Motto Box */
+    .motto-box {
+    max-width: 250px;
+    position: absolute;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.6);
+/* Adds readability on mobile */
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    bottom: 0;
+    left: 10%;
+    }
+
+/* Changes the vertical line */
+    .motto-box.border-info {
+    border-color: #00441B !important; 
+    }
+
+/* Changes the name text color */
+    .motto-box .text-info {
+    color: #41AB5D !important;
+    }
+
+
+    @media (min-width: 992px) {
+    .motto-box {
+    bottom: -20px;
+    left: 0;
+    background: transparent;
+    backdrop-filter: none;
+    }
+    }
+
+/* === End of Landing Page Section === */
+
+
+
+
+/* === Portfolio Section === */
+
+/* Card Container */
+    .project-card {
+    background-color: #0d0d12;
+    border: 1px solid #1f1f27;
+    border-radius: 28px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    }
+
+    .project-card:hover {
+    transform: translateY(-8px);
+    border-color: #333644;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+/* Image styling - Perfect Square (1:1) */
+    .img-placeholder {
+    /* Matches your card background so the image blends in */
+    background-color: #0d0d12; 
+    border-radius: 20px;
+    overflow: hidden;
+    
+    /* 1. Sets the container to a perfect square */
+    aspect-ratio: 1 / 1; 
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .portfolio-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.5s ease;
+/* Ensures image fills space without stretching */
+    }
+
+/* Badge and Button Styling */
+    .custom-badge {
+    background-color: #16161d;
+    color: #9ca3af;
+    font-size: 0.7rem;
+/* Slightly smaller for mobile fit */
+    padding: 4px 12px;
+    border-radius: 50px;
+    border: 1px solid #25252e;
+    white-space: nowrap;
+    }
+
+    .arrow-btn {
+    width: 42px;
+    height: 42px;
+    background-color: #1a1a23;
+    color: #41AB5D;
+/* Changed to your brand green to make it pop */
+    border: 1px solid #25252e;
+/* Adds definition against the card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    }
+
+/* Make the icon inside larger */
+    .arrow-btn i {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+    .arrow-btn:hover {
+    background-color: #41AB5D;
+/* Use your brighter brand green */
+    color: #000000;
+/* Dark icon on bright background */
+    transform: rotate(45deg);
+/* Modern trending hover effect */
+    border-color: #41AB5D;
+    }
+
+/* Mobile-Specific Adjustments */
+    @media (max-width: 576px) {
+    .display-5 {
+    font-size: 2rem;
+/* Scaled down heading for small phones */
+    }
+    .project-card {
+     padding: 1rem !important;
+    }
+    }
+
+/* === End of Portfolio Section === */
+
+
+
+/* === Tools Section === */
+
+    .category-block h4 {
+    color: #FFFFFF;
+/* Replace with your desired color, e.g., #00d4ff */
+    }
+
+/* Background & Section */
+    .bg-dark-custom { background-color: #050505; }
+
+/* Card Styling */
+    .tool-card {
+    background-color: #0b0b0f;
+    border: 1px solid #1a1a20;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tool-card:hover {
+    border-color: #3b3b4d;
+    background-color: #0f0f16;
+    transform: translateY(-5px);
+    }
+
+/* Ensure the image fits the container */
+    .tool-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+/* Keeps logo proportions */
+    border-radius: 8px;
+/* Optional: rounds image corners */
+    }
+
+/* Updated Icon Box (Removed fixed background colors) */
+    .icon-box {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    }
+
+
+/* Typography Responsiveness */
+    .tool-desc {
+    color: #888a93;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    }
+
+/* Media Query for extra small devices */
+    @media (max-width: 575.98px) {
+    .tool-card {
+    padding: 1.25rem !important;
+/* Slightly tighter padding on mobile */
+    }
+    h2.fw-bold {
+    font-size: 1.75rem;
+/* Scaled down section title */
+    }
+    }
+
+/* === End of Tools Section === */
+
+
+
+/* === Contact Section === */
+
+/* --- Core Styling --- */
+    body { background-color: #050505; }
+
+    .premium-card {
+    background-color: #0b0b0f;
+    border: 1px solid #1A1A1B;
+    border-radius: 24px;
+    }
+
+    .premium-input {
+    background-color: #ffffff !important;
+    border: 1px solid #1A1A1B !important;
+    color: #000000 !important;
+    padding: 12px 16px;
+    border-radius: 12px;
+    }
+
+/* This handles the text color specifically while you are typing */
+    .premium-input:focus {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    outline: none;
+    box-shadow: none;
+    }
+
+    .social-link {
+    display: block;
+    background-color: #238845;
+    border: 1px solid #1A1A1B;
+    color: #FFFFFF;
+    padding: 12px;
+/* Slightly tighter for mobile */
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-align: center;
+    transition: 0.3s;
+    }
+
+/* --- Mobile Fixes (Media Queries) --- */
+    @media (max-width: 991.98px) {
+    .display-6 {
+    font-size: 2rem;
+/* Scale down the main header */
+    }
+    
+    .premium-card {
+    border-radius: 20px;
+/* Slightly sharper corners for small screens */
+    }
+    }
+
+    @media (max-width: 575.98px) {
+    .social-link {
+    font-size: 0.75rem;
+/* Ensure 2 columns fit on tiny phones */
+    padding: 10px 5px;
+    }
+    
+    .lead {
+    font-size: 1rem;
+/* Better readability on mobile */
+    }
+    }
+
+/* Update your button base classes to include the transition */
+    .btn-blue, .btn-purple {
+    transition: 0.3s ease;
+    }
+
+/* Base styles for all your primary buttons */
+    .btn-blue, .btn-purple {
+    display: inline-block;
+/* Ensures they don't collapse */
+    background-color: #238845;
+    border: 1px solid #1A1A1B;
+    color: #FFFFFF !important;
+/* Forces text to be white */
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover "Pop" for all buttons (Social, Blue, and Purple) */
+    .btn-blue:hover, 
+    .btn-purple:hover {
+    background-color: #2fb15b !important;
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+/* Hover effect for the Social Links (Instagram, Git, etc.) */
+    .social-link:hover {
+    background-color: #2fb15b;
+    border-color: #ffffff;
+/* Optional: makes the border pop */
+    color: #ffffff;
+}
+
+
+/* === End of Contact Section === */
+
+
+
+/* Enable Smooth Scrolling */
+    html {
+    scroll-behavior: smooth;
+    }
+
+/* Offset for Fixed Navbar */
+/* Adjust the 100px value based on your navbar's height */
+    section {
+    scroll-margin-top: 100px;
+    }
+
+/* Optional: Close the mobile menu automatically after clicking a link */
+/* This requires a tiny bit of JS or you can leave it as is */
