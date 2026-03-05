@@ -1,9 +1,9 @@
 /* =========================
    CSS RESET
 ========================= */
-*,
-*::before,
-*::after {
+*{
+  margin:0;
+  padding:0;
   box-sizing:border-box;
 }
 
@@ -19,14 +19,9 @@ h1,h2,h3,h4,h5,h6{
   color:#ffffff;
 }
 
-body {
-  font-family:'Roboto',sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /* Body Text */
 p,span,label,input,textarea{
+  font-family:'Roboto',sans-serif;
   font-weight:400;
   line-height:1.6;
   color:#a0a0a0;
@@ -71,11 +66,21 @@ body,html{
 ========================= */
 
 .navbar.fixed-top{
-  z-index:9999;
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  width:100vw!important;
+  z-index:9999!important;
+
+  -webkit-transform:translate3d(0,0,0);
+  transform:translate3d(0,0,0);
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
 }
 
 .navbar-toggler-icon{
-  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(33,37,41,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important;
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important;
 }
 
 .navbar-toggler{
@@ -92,21 +97,26 @@ body,html{
   box-shadow:0 10px 30px rgba(0,0,0,0.1);
   border:1px solid #BFBCBC;
   transition:all .3s ease;
-
-  display:flex;
-  align-items:center;
 }
 
 @media(max-width:991.98px){
   .custom-navbar-container{
     width:95%;
     border-radius:20px;
+    display:block!important;
   }
 }
 
-.brand-section{
-  border-right:1px solid rgba(0,0,0,0.1);
-  padding-right:1.5rem;
+@media(min-width:992px){
+  .custom-navbar-container{
+    display:flex;
+    align-items:center;
+  }
+
+  .brand-section{
+    border-right:1px solid rgba(0,0,0,0.1);
+    padding-right:1.5rem;
+  }
 }
 
 .nav-link{
@@ -122,12 +132,20 @@ body,html{
 }
 
 /* Profile Image */
+
 .profile-circle{
   width:45px;
   height:45px;
   border-radius:50%;
   overflow:hidden;
   background:#eee;
+}
+
+.profile-img{
+  background-image:url('./images/rojan.png');
+  background-size:cover;
+  background-position:center;
+  border:2px solid #fff;
 }
 
 /* =========================
@@ -147,7 +165,83 @@ body,html{
 
 /* BUTTON */
 
+.btn-trending{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:18px 45px;
+  font-size:.9rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+
+  color:#00441B;
+  text-decoration:none;
+  border:2px solid #00441B;
+  background:transparent;
+
+  overflow:hidden;
+  white-space:nowrap;
+  transition:color .4s cubic-bezier(.4,0,.2,1);
+  z-index:1;
+}
+
+.btn-text{
+  position:relative;
+  z-index:2;
+}
+
+.btn-fill{
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#00441B;
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+  z-index:1;
+}
+
+.btn-trending:hover{
+  color:#fff;
+  box-shadow:0 0 20px rgba(0,68,27,.6);
+}
+
+.btn-trending:hover .btn-fill{
+  transform:translateY(-100%);
+}
+
+/* Button Responsive */
+
+@media(max-width:991px){
+  .btn-trending{
+    padding:16px 40px;
+    font-size:.85rem;
+    letter-spacing:1.5px;
+  }
+}
+
+@media(max-width:767px){
+  .btn-trending{
+    padding:14px 30px;
+    font-size:.8rem;
+    width:100%;
+    max-width:300px;
+    margin:0 auto;
+  }
+}
+
+@media(max-width:375px){
+  .btn-trending{
+    padding:12px 20px;
+    letter-spacing:1px;
+  }
+}
+
 /* VISUAL STACK */
+
 .visual-stack{
   position:relative;
   display:flex;
@@ -156,18 +250,105 @@ body,html{
   min-height:400px;
 }
 
+@media(min-width:992px){
+  .visual-stack{
+    min-height:500px;
+  }
+}
+
+.design-layer{
+  position:absolute;
+  z-index:1;
+  width:70%;
+  opacity:.6;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+@media(min-width:992px){
+  .design-layer{
+    top:10%;
+    right:0;
+    left:auto;
+    transform:none;
+    width:80%;
+  }
+}
+
+/* FIRE EFFECT */
+
+.fire-container{
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+}
+
+.fire-particle{
+  position:absolute;
+  bottom:0;
+  width:40px;
+  height:120px;
+  background:linear-gradient(to top,rgba(0,68,27,.8)0%,rgba(0,68,27,0)70%);
+  filter:blur(15px);
+  border-radius:40% 40% 0 0;
+  opacity:0;
+  z-index:1;
+  animation:rise 2s infinite ease-in;
+}
+
+.fire-particle:nth-child(1){left:10%;animation-delay:0s;}
+.fire-particle:nth-child(2){left:30%;animation-delay:.5s;width:150px;}
+.fire-particle:nth-child(3){left:50%;animation-delay:1.2s;}
+.fire-particle:nth-child(4){left:70%;animation-delay:.8s;width:120px;}
+.fire-particle:nth-child(5){left:85%;animation-delay:1.5s;}
+
+@keyframes rise{
+  0%{transform:translateY(0) scale(1);opacity:0;}
+  30%{opacity:.8;}
+  100%{transform:translateY(-300px) scaleX(.5) scaleY(2);opacity:0;}
+}
+
 .portrait-layer{
   position:relative;
   z-index:2;
   width:120%;
   transition:transform .3s ease;
-  will-change:transform;
 }
 
 .portrait-layer img{
   position:relative;
   z-index:2;
-  will-change:transform;
+}
+
+/* MOTTO BOX */
+
+.motto-box{
+  max-width:250px;
+  position:absolute;
+  z-index:3;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(5px);
+  padding:10px;
+  bottom:0;
+  left:10%;
+}
+
+.motto-box.border-info{
+  border-color:#00441B!important;
+}
+
+.motto-box .text-info{
+  color:#41AB5D!important;
+}
+
+@media(min-width:992px){
+  .motto-box{
+    bottom:-20px;
+    left:0;
+    background:transparent;
+    backdrop-filter:none;
+  }
 }
 
 /* =========================
@@ -181,7 +362,6 @@ body,html{
   transition:.3s;
   display:flex;
   flex-direction:column;
-  will-change:transform;
 }
 
 .project-card:hover{
@@ -194,7 +374,7 @@ body,html{
   background:#0d0d12;
   border-radius:20px;
   overflow:hidden;
-  height:250px;
+  aspect-ratio:1/1;
   width:100%;
   display:flex;
   align-items:center;
@@ -207,7 +387,6 @@ body,html{
   object-fit:contain;
   object-position:center;
   transition:transform .5s ease;
-  will-change:transform;
 }
 
 .custom-badge{
@@ -243,7 +422,6 @@ body,html{
   color:#000;
   transform:rotate(45deg);
   border-color:#41AB5D;
-  will-change:transform, background-color;
 }
 
 /* =========================
@@ -263,7 +441,6 @@ body,html{
   border:1px solid #1a1a20;
   border-radius:20px;
   transition:.3s;
-  will-change:transform;
 }
 
 .tool-card:hover{
@@ -314,7 +491,7 @@ body,html{
 .premium-input:focus{
   background:#fff!important;
   color:#000!important;
-  outline:2px solid #41AB5D;
+  outline:none;
   box-shadow:none;
 }
 
