@@ -571,10 +571,6 @@
     margin-bottom: 0;
     }
 
-    .tools-description {
-    max-width: 600px;
-    }
-
 /* Media Query for extra small devices */
     @media (max-width: 575.98px) {
     .tool-card {
