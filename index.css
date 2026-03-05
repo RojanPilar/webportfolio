@@ -12,21 +12,21 @@
 ========================= */
 
 /* Headings */
-h1,h2,h3,h4,h5,h6{
+/*h1,h2,h3,h4,h5,h6{
   font-family:'Inter',sans-serif;
   font-weight:700;
   letter-spacing:-0.02em;
   color:#ffffff;
-}
+}*/
 
 /* Body Text */
-p,span,label,input,textarea{
+/*p,span,label,input,textarea{
   font-family:'Roboto',sans-serif;
   font-weight:400;
   line-height:1.6;
   color:#a0a0a0;
 }
-
+*/
 .lead{
   font-weight:300;
   font-size:1.15rem;
@@ -36,10 +36,6 @@ p,span,label,input,textarea{
 /* =========================
    GLOBAL
 ========================= */
-
-html{
-  scroll-behavior:smooth;
-}
 
 body{
   background:#050505;
@@ -70,7 +66,7 @@ body,html{
   top:0!important;
   left:0!important;
   right:0!important;
-  width:100vw!important;
+  width:100%!important;
   z-index:9999!important;
 
   -webkit-transform:translate3d(0,0,0);
@@ -301,9 +297,9 @@ body,html{
   100%{transform:translateY(-300px) scaleX(.5) scaleY(2);opacity:0;}
 }*/
 
-.fire-particle{
+/*.fire-particle{
   display:none;
-}
+}*/
 
 .portrait-layer{
   position:relative;
