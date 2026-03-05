@@ -141,13 +141,6 @@ body,html{
   background:#eee;
 }
 
-.profile-img{
-  background-image:url('./images/rojan.png');
-  background-size:cover;
-  background-position:center;
-  border:2px solid #fff;
-}
-
 /* =========================
    LANDING SECTION
 ========================= */
@@ -294,7 +287,7 @@ body,html{
   border-radius:40% 40% 0 0;
   opacity:0;
   z-index:1;
-  animation:rise 2s infinite ease-in;
+  animation: rise 2s ease-in 3;
 }
 
 .fire-particle:nth-child(1){left:10%;animation-delay:0s;}

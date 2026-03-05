@@ -32,7 +32,7 @@
                 
                 <!-- Branding/Profile -->
                 <div class="d-flex align-items-center brand-section">
-                    <div class="profile-circle me-3 profile-img"></div>
+                    <img src="./images/rojan.png" alt="Rojan Pilar profile photo" class="profile-circle me-3">
                     <div class="brand-text">
                         <span class="d-block text-dark fw-bold lh-1">Rojan</span>
                         <!-- Hidden on extra small screens to save space -->
@@ -115,7 +115,7 @@
                          class="img-fluid shadow-lg" 
                          width="500" 
                          height="600" 
-                         loading="eager">
+                         loading="lazy">
                     </div>
                 </div>
 
@@ -722,11 +722,22 @@
                         <div class="col-lg-7">
                             <!-- Social grid: 2 columns even on small phones -->
                             <div class="row g-2">
-                                <div class="col-6 col-sm-3 col-lg-6"><a href="https://about.gitlab.com/" class="social-link">GitLab ↗</a></div>
-                                <div class="col-6 col-sm-3 col-lg-6"><a href="https://github.com/" class="social-link">GitHub ↗</a></div>
-                                <div class="col-6 col-sm-3 col-lg-6"><a href="https://www.facebook.com/" class="social-link">Facebook ↗</a></div>
-                                <div class="col-6 col-sm-3 col-lg-6"><a href="https://www.linkedin.com" class="social-link">LinkedIn ↗</a></div>
+                            <div class="col-6 col-sm-3 col-lg-6">
+                                <a href="https://about.gitlab.com/" target="_blank" rel="noopener noreferrer" class="social-link">GitLab ↗</a>
                             </div>
+
+                            <div class="col-6 col-sm-3 col-lg-6">
+                                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link">GitHub ↗</a>
+                            </div>
+
+                            <div class="col-6 col-sm-3 col-lg-6">
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link">Facebook ↗</a>
+                            </div>
+
+                            <div class="col-6 col-sm-3 col-lg-6">
+                                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn ↗</a>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -741,7 +752,7 @@
 
 
     <!-- JS Bootrap Link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
