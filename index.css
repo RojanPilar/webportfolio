@@ -282,7 +282,7 @@ body,html{
   border-radius:40% 40% 0 0;
   opacity:0;
   z-index:1;
-  animation: rise 2s ease-in 3;
+  animation: rise 2s ease-in infinite;
 }
 
 .fire-particle:nth-child(1){left:10%;animation-delay:0s;}
