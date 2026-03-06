@@ -503,6 +503,7 @@ body,html{
 .social-link:hover{
   background:#2fb15b;
   border-color:#fff;
+  color: #ffffff !important;
 }
 
 .btn-blue,
