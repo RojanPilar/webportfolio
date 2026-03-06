@@ -272,7 +272,7 @@ body,html{
   overflow:hidden;
 }
 
-/*.fire-particle{
+.fire-particle{
   position:absolute;
   bottom:0;
   width:40px;
@@ -291,11 +291,11 @@ body,html{
 .fire-particle:nth-child(4){left:70%;animation-delay:.8s;width:120px;}
 .fire-particle:nth-child(5){left:85%;animation-delay:1.5s;}*/
 
-/*@keyframes rise{
+@keyframes rise{
   0%{transform:translateY(0) scale(1);opacity:0;}
   30%{opacity:.8;}
   100%{transform:translateY(-300px) scaleX(.5) scaleY(2);opacity:0;}
-}*/
+}
 
 /*.fire-particle{
   display:none;
